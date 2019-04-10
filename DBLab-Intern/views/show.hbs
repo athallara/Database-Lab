@@ -1,0 +1,50 @@
+<head>
+    <title>Internship Basdat-1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Photo</th>
+                <th scope="col">Name</th>
+                <th scope="col">Student ID</th>
+                <th scope="colgroup">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <td><img src="{{img}}" alt=""></td>
+                <td>{{name}}</td>
+                <td>{{nim}}</td>
+                <td>
+                    <form action="delete" method="POST">
+                        <button type="submit" value="{{nim}}" name="del" class="btn btn-danger">HAPUS</button></td>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <div class="col-12">
+        <a href="/" class="btn btn-success mx-auto d-block" style="width: 20%;"> Tambah Data</a>
+    </div>
+</div>
+    {{!-- <form action="delete" method="POST">
+        <input type="text" name="del" id="">
+        <button type="submit">Delete</button>
+    </form> --}}
+
+</body>
+
+<style>
+    .container{
+        width: 80%;
+        margin: 0 auto;
+    }
+</style>
